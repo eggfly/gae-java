@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	<!-- JSPC servlet mappings start -->
+
+    <servlet>
+        <servlet-name>org.apache.jsp.lf_002dspy_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.lf_002dspy_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.new_005ftemplate_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.new_005ftemplate_jsp</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.lf_002dspy_jsp</servlet-name>
+        <url-pattern>/lf-spy.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.new_005ftemplate_jsp</servlet-name>
+        <url-pattern>/new_template.jsp</url-pattern>
+    </servlet-mapping>
+
+<!-- JSPC servlet mappings end -->
+
+<security-constraint>
+        <web-resource-collection>
+            <url-pattern>/getfile</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+	<servlet>
+		<servlet-name>Smarty4j</servlet-name>
+		<servlet-class>tk.eggfly.smarty4j.Smarty4jServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Getfile</servlet-name>
+		<servlet-class>tk.eggfly.smarty4j.GetfileServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Smarty4j</servlet-name>
+		<url-pattern>/test</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Getfile</servlet-name>
+		<url-pattern>/getfile</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>new_template.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
